@@ -1,0 +1,108 @@
+@use './config.scss' as *;
+.carousel {
+  padding: 20px 4%;
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #e5e5e5;
+  }
+
+  &__track {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    &__title {
+      font-size: 1.4rem;
+    }
+    &__track {
+      gap: 12px;
+      overflow-x: hidden;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.card {
+  flex: 0 0 46%;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    z-index: 2;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-size: cover;
+    background-position: center;
+
+    &.p1 {
+      background-image: url('https://picsum.photos/300/170?random=1');
+    }
+    &.p2 {
+      background-image: url('https://picsum.photos/300/170?random=2');
+    }
+    &.p3 {
+      background-image: url('https://picsum.photos/300/170?random=3');
+    }
+    &.p4 {
+      background-image: url('https://picsum.photos/300/170?random=4');
+    }
+    &.p5 {
+      background-image: url('https://picsum.photos/300/170?random=5');
+    }
+    &.p6 {
+      background-image: url('https://picsum.photos/300/170?random=6');
+    }
+    &.p7 {
+      background-image: url('https://picsum.photos/300/170?random=7');
+    }
+    &.p8 {
+      background-image: url('https://picsum.photos/300/170?random=8');
+    }
+    &.p9 {
+      background-image: url('https://picsum.photos/300/170?random=9');
+    }
+  }
+
+  &__progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #555;
+  }
+
+  &__progress-bar {
+    height: 100%;
+    background-color: $color-primary;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    flex: 0 0 15.5%;
+  }
+}
